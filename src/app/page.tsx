@@ -1,7 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { put } from "@vercel/blob";
 
-export default function Home() {
+export default async function Home() {
+  
+  const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
+  console.log(url)
   return (
     <main className={styles.main}>
       <div className={styles.description}>
