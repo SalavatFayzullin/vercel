@@ -4,7 +4,7 @@ import { put } from "@vercel/blob";
 
 export default async function Home() {
   
-  const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public' });
+  const { url } = await put('articles/blob.txt', 'Hello World!', { access: 'public', token: 'vercel_blob_rw_QLb4UNDlEroGGeGd_5vt8WgheDQgtuesvqfLyExYIwhrVga' }, );
   console.log(url)
   return (
     <main className={styles.main}>
